@@ -4,7 +4,7 @@ locals {
 
 resource "terraform_data" "llrt" {
   provisioner "local-exec" {
-    command = "curl -L -o llrt.zip ${local.url}"
+    command = "curl -L -o ${path.module}/llrt.zip ${local.url}"
   }
 
   triggers_replace = [
